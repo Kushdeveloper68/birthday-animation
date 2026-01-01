@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    />
+    <title>Pooja's Mobile Universe Experience</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#8c2bee',
+              'background-light': '#f7f6f8',
+              'background-dark': '#191022',
+              'accent-gold': '#ffd700'
+            },
+            fontFamily: {
+              display: ['Space Grotesk', 'sans-serif'],
+              body: ['Noto Sans', 'sans-serif']
+            },
+            borderRadius: {
+              DEFAULT: '0.25rem',
+              lg: '0.5rem',
+              xl: '0.75rem',
+              full: '9999px'
+            },
+            animation: {
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              float: 'float 6s ease-in-out infinite'
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-white font-display h-screen w-screen selection:bg-primary selection:text-white"
+  >
+    <canvas id="universe"></canvas>
+    <div
+      class="ui-layer flex flex-col items-center justify-center h-full w-full p-6"
+    >
+      <div
+        class="text-center max-w-4xl flex flex-col items-center gap-6 transition-opacity duration-1000 w-full"
+        id="text-container"
+      >
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight text-white drop-shadow-[0_0_15px_rgba(140,43,238,0.5)] min-h-[1.5em] sm:min-h-[1.2em] break-words w-full"
+          id="main-heading"
+        ></h1>
+        <p
+          class="text-[#ad92c9] text-base sm:text-lg md:text-xl font-normal leading-relaxed tracking-wide max-w-2xl min-h-[1.5em] px-4"
+          id="sub-text"
+        ></p>
+      </div>
+      <button
+        class="interactive-element mt-12 bg-primary/20 active:bg-primary/40 md:hover:bg-primary text-white border border-primary/50 px-10 py-4 md:px-8 md:py-3 rounded-full text-base md:text-sm font-bold tracking-[0.1em] uppercase hidden opacity-0 transition-all duration-700 shadow-[0_0_20px_rgba(140,43,238,0.3)] md:hover:shadow-[0_0_30px_#8c2bee]"
+        id="start-btn"
+      >
+        Ignite the Spark
+      </button>
+    </div>
+    <div
+      class="ui-layer absolute inset-0 flex items-center justify-center pointer-events-none hidden opacity-0 transition-opacity duration-1000"
+      id="orbs-container"
+    ></div>
+    <div class="ui-layer fixed bottom-6 right-6 z-50">
+      <button
+        aria-label="Secret Star"
+        class="interactive-element w-10 h-10 md:w-8 md:h-8 rounded-full flex items-center justify-center text-[#ad92c9]/30 active:text-[#ffd700] md:hover:text-[#ffd700] md:hover:scale-125 transition-all duration-300"
+        id="easter-egg"
+      >
+        <span class="material-symbols-outlined text-[20px] md:text-[16px]"
+          >star</span
+        >
+      </button>
+      <div
+        class="absolute bottom-12 right-0 w-64 bg-[#1a1122]/95 backdrop-blur-md border border-primary/30 p-4 rounded-xl shadow-2xl transform translate-y-4 opacity-0 scale-95 pointer-events-none transition-all duration-300 origin-bottom-right"
+        id="easter-egg-msg"
+      >
+        <p class="text-xs text-[#ad92c9]">
+          You found the lucky star! May your year be as bright as a supernova.
+          ✨
+        </p>
+      </div>
+    </div>
+    <div class="ui-layer fixed top-6 right-6 z-50">
+      <button
+        class="interactive-element p-3 md:p-2 rounded-full bg-white/5 active:bg-white/10 md:hover:bg-white/10 text-white/50 active:text-white md:hover:text-white transition-colors"
+      >
+        <span class="material-symbols-outlined">graphic_eq</span>
+      </button>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
