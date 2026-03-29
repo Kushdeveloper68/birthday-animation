@@ -6,6 +6,7 @@ body {
   height: 100dvh;
   width: 100vw;
 }
+
 canvas {
   display: block;
   position: fixed;
@@ -14,6 +15,7 @@ canvas {
   z-index: 0;
   touch-action: none;
 }
+
 .ui-layer {
   position: relative;
   z-index: 10;
